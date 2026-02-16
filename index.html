@@ -11,18 +11,27 @@
 }
 
 body {
+<style>
+/* Ocultar scrollbar en todos los navegadores */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+*::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+body {
   margin: 0;
   padding: 0;
   background: transparent;
   font-family: 'Playfair Display', serif;
   text-align: center;
-  
-  /* 2. Evita el desbordamiento visual */
-  overflow: hidden; 
-  
-  /* 3. Compatibilidad extra para Firefox e IE/Edge */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  overflow: hidden; /* Evita scroll */
+  height: 100vh;    /* Fuerza al body a no medir más que la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente para evitar roces con los bordes */
 }
 
 .countdown {
@@ -50,6 +59,7 @@ body {
   color: #777;
   margin-top: 4px;
 }
+</style>
 </style>
 </head>
 <body>
@@ -97,3 +107,4 @@ updateCountdown();
 
 </body>
 </html>
+
