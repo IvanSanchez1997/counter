@@ -2,13 +2,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
+  padding: 0;
   background: transparent;
   font-family: 'Playfair Display', serif;
   text-align: center;
@@ -16,28 +15,29 @@ body {
 }
 
 .countdown {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 14px;
-  flex-wrap: nowrap;
+  gap: 18px;
+  white-space: nowrap;
 }
 
 .box {
-  flex: 1;
-  min-width: 0;
+  text-align: center;
 }
 
 .number {
-  font-size: 26px;
+  font-size: 28px;
   color: #d4af37;
   font-weight: 600;
+  line-height: 1;
 }
 
 .label {
   font-size: 11px;
   letter-spacing: 2px;
   color: #777;
+  margin-top: 4px;
 }
 </style>
 </head>
