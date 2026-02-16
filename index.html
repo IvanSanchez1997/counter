@@ -2,35 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
   background: transparent;
   font-family: 'Playfair Display', serif;
   text-align: center;
+  overflow: hidden;
 }
 
 .countdown {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap;
 }
 
 .box {
-  min-width: 70px;
+  flex: 1;
+  min-width: 0;
 }
 
 .number {
-  font-size: 32px;
+  font-size: 26px;
   color: #d4af37;
   font-weight: 600;
 }
 
 .label {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 2px;
-  color: #555;
+  color: #777;
 }
 </style>
 </head>
@@ -56,7 +63,7 @@ body {
 </div>
 
 <script>
-const weddingDate = new Date("Oct 11, 2026 00:00:00").getTime();
+const weddingDate = new Date("October 11, 2026 00:00:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
