@@ -5,13 +5,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+/* 1. Oculta el scroll en Chrome, Safari y navegadores modernos (WebKit) */
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: transparent;
   font-family: 'Playfair Display', serif;
   text-align: center;
-  overflow: hidden;
+  
+  /* 2. Evita el desbordamiento visual */
+  overflow: hidden; 
+  
+  /* 3. Compatibilidad extra para Firefox e IE/Edge */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
 .countdown {
