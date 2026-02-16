@@ -5,68 +5,64 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* 1. ELIMINAR SCROLLBARS (WEBKIT/FIREFOX) */
+/* ELIMINAR SCROLL TOTAL */
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  box-sizing: border-box;
 }
 *::-webkit-scrollbar {
   display: none;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Evita scroll */
+body {
   background: transparent;
   font-family: 'Playfair Display', serif;
-  
-  /* 2. TRUCO PARA MÓVIL: Desactiva gestos de scroll y el "rebote" */
-  touch-action: none; 
-  overscroll-behavior: none;
-  
+  text-align: center;
+  overflow: hidden;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
 }
 
 .countdown {
   display: flex;
-  justify-content: center;
+  width: 100%; /* Ocupa todo el ancho del iframe */
+  max-width: 400px; /* Evita que se estire demasiado en PC */
+  justify-content: space-around; /* Reparte el espacio equitativamente */
   align-items: center;
-  gap: 15px; /* Reducido un poco para que quepa en móviles estrechos */
-  white-space: nowrap;
 }
 
 .box {
+  flex: 1; /* Cada caja ocupa el mismo espacio */
   text-align: center;
-  min-width: 60px; /* Asegura un ancho base */
 }
 
 .number {
-  font-size: 26px; /* Bajamos de 28px a 26px para asegurar espacio */
+  font-size: 24px; /* Un pelín más pequeño para asegurar que quepa */
   color: #d4af37;
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .label {
-  font-size: 10px; /* Bajamos de 11px a 10px */
+  font-size: 9px; /* Ajustado para que no se corte */
   letter-spacing: 1px;
   color: #777;
-  margin-top: 2px;
+  margin-top: 4px;
+  text-transform: uppercase;
 }
 
-/* 3. AJUSTE PARA PANTALLAS MUY PEQUEÑAS (iPhone SE, etc) */
-@media (max-width: 360px) {
-  .countdown { gap: 10px; }
-  .number { font-size: 22px; }
-  .label { font-size: 9px; }
+/* Si la pantalla es muy pequeña, bajamos un poco más el tamaño */
+@media (max-width: 320px) {
+  .number { font-size: 20px; }
+  .label { font-size: 8px; }
 }
 </style>
+  
 </head>
 <body>
 
@@ -113,5 +109,6 @@ updateCountdown();
 
 </body>
 </html>
+
 
 
